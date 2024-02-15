@@ -3,10 +3,31 @@
 QR을 통해 고객을 PB정보 열람 가능 </br>
 PB(Private Banker) 개인 고객에게 금융 상담 및 투자 관리 서비스를 제공하는 금융 전문가
 
-## 프로젝트 설명
+## 프로젝트 개요
 > PB는 자신의 포트폴리오와 이력을 명함에 붙이거나 이력서 사이트를 제공함으로써 새로운 영업 환경과
 > 기회를 제공하고 개인투자자들도 PB와 쉽게 contact하고 새로운 투자상품을 추천받을 수 있는 통합 자산관리 서비스입니다. </br>
 > 또한, PB에게는 고객과 일정 관리 할 수 있는 페이지를 제공함으로써 맞춤형 서비스를 제공할 수 있습니다.
+
+
+### 프로젝트 기능
+  ```
+  1. 고객정보 관리
+     각 고객에 대한 상세 페이지를 제공하여 포트폴리오, 수익률, 계좌 자산 등을 확인
+  2. 캘린더 일정 관리
+     고객과의 미팅 및 상담 일정 관리
+  3. QR코드 생성 및 다운로드
+     PB의 정보 페이지를 QR코드로 생성하고 명함에 붙일 수 있음
+     따라서 PB가 활동하는 영업 시장을 넓히는 효과
+  ```
+
+## 프로젝트 역할
+```
+- 안정민 : Figma 활용 UI 설계 및 FrontEnd 전체
+- 고나형 : Cloud Architecture 설계 및 EKS 배포, CRUD API 개발
+- 이재연 : Figma 활용 UI 설계 및 FrontEnd 전체
+- 나영현 : ERD 설계, CRUD API 설계 및 개발
+- 홍보영 : ERD 설계, CRUD API 설계 및 개
+```
 
 
 <div align="left">
@@ -30,10 +51,12 @@ PB(Private Banker) 개인 고객에게 금융 상담 및 투자 관리 서비스
 <img src="https://img.shields.io/badge/JAVA 17-0058CC?style=for-the-badge&logoColor=white">
 <img src="https://img.shields.io/badge/spring boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
 
 **Infra**
 
+<img src="https://img.shields.io/badge/NHNCloud-232F3E?style=for-the-badge&logo=nhn-cloud&logoColor=white">
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+<img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white">
 
 **CO-WORK**
 
@@ -44,6 +67,7 @@ PB(Private Banker) 개인 고객에게 금융 상담 및 투자 관리 서비스
 </div>
 
 ## ERD
+‼️ 정보계 시스템에 있는 DB table들을 최대한 고려하여 확장 가능한 형태로 DB 설계
 ![ERD](https://github.com/shs-g1/server/assets/89563433/e097ebca-f80b-48e0-b6a7-1bd5123bfefc)
 
 ## Infra
@@ -88,12 +112,32 @@ PB(Private Banker) 개인 고객에게 금융 상담 및 투자 관리 서비스
 ![PB 정보 등록 페이지](https://github.com/shs-g1/server/assets/89563433/cc8175e8-3c88-4660-b095-c214fb297a8a)
 
 ## 5. PB 이력 및 포트폴리오 정보 제공 페이지
-- PB가 입력한 정보 확이니 가능
+- PB가 입력한 정보 확인이 가능
 - 포트폴리오 목록을 클릭하면 모달창 확인가능
 - 모달창에 투자 포트폴리오의 상세 정보 확인 가능
-* 투자 포트폴리오는 PB 본인이 운용했던 투자 포트폴리오 내역을 보여줌
+  
+‼️ 투자 포트폴리오는 PB 본인이 운용했던 투자 포트폴리오 내역을 보여줌
+‼️ 해당 페이지는 앱 뷰 형태로 제작을 진행함(QR을 핸드폰으로 찍고 접속하는 경우)
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/shs-g1/server/assets/89563433/8d84f78f-bdca-4ebc-9b91-70aee73e5dc0" alt="포트폴리오1" width="30%">
   <img src="https://github.com/shs-g1/server/assets/89563433/32a0cf98-fd92-403f-b754-3808f552131b" alt="포트폴리오2" width="30%">
   <img src="https://github.com/shs-g1/server/assets/89563433/de09e43d-71f4-4355-b292-db5992b18486" alt="포트폴리오 화면" width="30%">
 </div>
+
+# ⚙️ Conversion Rule
+
+<h2>commit message</h2> 
+
+- feat : 새로운 기능
+- fix : 버그 수정
+- docs : 문서 추가/수정
+- test : 테스트 추가/수정
+- build : 빌드 업무 수정, 패키지 매니저 수정
+- refactor : 코드 리팩토링
+- chore : 중요하지 않은 변경(코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우, …)
+
+<h2>📃 Branch 전략 </h2>
+- github issue 활용
+- PR Templete 지키기
+- 기능별 Branch 만들기
+- Dev 브랜치에 병합
